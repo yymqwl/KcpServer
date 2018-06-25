@@ -1,0 +1,17 @@
+AppServer/.vs/
+AppServer/AppServer/bin/
+AppServer/AppServer/obj/
+AppServer/SuperSocket/SocketEngine/obj/
+AppServer/GameFramework/bin/
+AppServer/GameFramework/obj/
+AppServer/GameMain/bin/
+AppServer/GameMain/obj/
+AppServer/GameMsg/bin/
+AppServer/GameMsg/obj/
+AppServer/SuperSocket/Common/bin/
+AppServer/SuperSocket/Common/obj/
+AppServer/SuperSocket/Facility/obj/
+AppServer/SuperSocket/Facility/bin/
+AppServer/SuperSocket/SocketBase/bin/
+AppServer/SuperSocket/SocketBase/obj/
+AppServer/SuperSocket/SocketEngine/bin/

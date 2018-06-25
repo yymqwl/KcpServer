@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FC6BBB7-126D-435B-B321-30AD743B4E6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameMain</RootNamespace>
+    <AssemblyName>GameMain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>E:\vswork\TestDll\TestDll\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>E:\vswork\TestDll\TestDll\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameMain\Base\AppModules.cs" />
+    <Compile Include="GameMain\Base\GameMainEntry.cs" />
+    <Compile Include="GameMain\Common\GameConstant.cs" />
+    <Compile Include="GameMain\Lockstep\Command.cs" />
+    <Compile Include="GameMain\Lockstep\FrameManager.cs" />
+    <Compile Include="GameMain\Lockstep\LockstepGameManager.cs" />
+    <Compile Include="GameMain\Lockstep\LockstepManagerBase.cs" />
+    <Compile Include="GameMain\Lockstep\LockstepReplayManager.cs" />
+    <Compile Include="GameMain\Lockstep\LockstepSimCom.cs" />
+    <Compile Include="GameMain\Lockstep\ProtoObject.cs" />
+    <Compile Include="GameMain\Lockstep\Replay.cs" />
+    <Compile Include="GameMain\Logging\ConsoleLog.cs" />
+    <Compile Include="GameMain\Logging\Log4NetLog.cs" />
+    <Compile Include="GameMain\Logging\LogManager.cs" />
+    <Compile Include="GameMain\MainEnter.cs" />
+    <Compile Include="GameMain\Msg\ENetEvent\ENetEvent.cs" />
+    <Compile Include="GameMain\Msg\ENetEvent\Req_Ping_NetEvent.cs" />
+    <Compile Include="GameMain\Msg\ISerializable.cs" />
+    <Compile Include="GameMain\Msg\MsgBase.cs" />
+    <Compile Include="GameMain\Msg\MsgMap.cs" />
+    <Compile Include="GameMain\Msg\MsgHead.cs" />
+    <Compile Include="GameMain\Msg\NetEvent.cs" />
+    <Compile Include="GameMain\NetWork\Base\FastBitConverter.cs" />
+    <Compile Include="GameMain\NetWork\Base\NetConstants.cs" />
+    <Compile Include="GameMain\NetWork\Base\NetDataReader.cs" />
+    <Compile Include="GameMain\NetWork\Base\NetDataWriter.cs" />
+    <Compile Include="GameMain\NetWork\Kcp\Kcp.cs" />
+    <Compile Include="GameMain\NetWork\Kcp\KcpPeer.cs" />
+    <Compile Include="GameMain\NetWork\Kcp\KcpReceiveFilter.cs" />
+    <Compile Include="GameMain\NetWork\Kcp\KcpReceiveFilterFactory.cs" />
+    <Compile Include="GameMain\NetWork\Kcp\KcpServer.cs" />
+    <Compile Include="GameMain\NetWork\Kcp\KcpSession.cs" />
+    <Compile Include="GameMain\NetWork\Kcp\SwitchQueue.cs" />
+    <Compile Include="GameMain\NetWork\NetWorkManager.cs" />
+    <Compile Include="GameMain\NetWork\Base\PackPeer.cs" />
+    <Compile Include="GameMain\NetWork\Base\PackServer.cs" />
+    <Compile Include="GameMain\Procedure\Procedure_Setting.cs" />
+    <Compile Include="GameMain\Timing\BaseTask.cs" />
+    <Compile Include="GameMain\Timing\CodeTimer.cs" />
+    <Compile Include="GameMain\Timing\TaskDispatch.cs" />
+    <Compile Include="GameMain\Variable\VarBool.cs" />
+    <Compile Include="GameMain\Variable\VarByte.cs" />
+    <Compile Include="GameMain\Variable\VarBytes.cs" />
+    <Compile Include="GameMain\Variable\VarChar.cs" />
+    <Compile Include="GameMain\Variable\VarChars.cs" />
+    <Compile Include="GameMain\Variable\VarColor.cs" />
+    <Compile Include="GameMain\Variable\VarDateTime.cs" />
+    <Compile Include="GameMain\Variable\VarDecimal.cs" />
+    <Compile Include="GameMain\Variable\VarDouble.cs" />
+    <Compile Include="GameMain\Variable\VarFloat.cs" />
+    <Compile Include="GameMain\Variable\VarGameObject.cs" />
+    <Compile Include="GameMain\Variable\VarInt.cs" />
+    <Compile Include="GameMain\Variable\VarLong.cs" />
+    <Compile Include="GameMain\Variable\VarMaterial.cs" />
+    <Compile Include="GameMain\Variable\VarObject.cs" />
+    <Compile Include="GameMain\Variable\VarQuaternion.cs" />
+    <Compile Include="GameMain\Variable\VarRect.cs" />
+    <Compile Include="GameMain\Variable\VarSByte.cs" />
+    <Compile Include="GameMain\Variable\VarShort.cs" />
+    <Compile Include="GameMain\Variable\VarString.cs" />
+    <Compile Include="GameMain\Variable\VarTexture.cs" />
+    <Compile Include="GameMain\Variable\VarTransform.cs" />
+    <Compile Include="GameMain\Variable\VarUInt.cs" />
+    <Compile Include="GameMain\Variable\VarULong.cs" />
+    <Compile Include="GameMain\Variable\VarUnityObject.cs" />
+    <Compile Include="GameMain\Variable\VarUShort.cs" />
+    <Compile Include="GameMain\Variable\VarVector2.cs" />
+    <Compile Include="GameMain\Variable\VarVector3.cs" />
+    <Compile Include="GameMain\Variable\VarVector4.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameFramework\GameFramework.csproj">
+      <Project>{e0f870e5-b978-40bf-bfd8-6aab6631bd26}</Project>
+      <Name>GameFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameMsg\GameMsg.csproj">
+      <Project>{c6ff387f-1419-4635-bf7e-30a5b1400078}</Project>
+      <Name>GameMsg</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperSocket\Common\SuperSocket.Common.Net45.csproj">
+      <Project>{a24f4d38-ba9c-4fd6-95b7-4980de36131a}</Project>
+      <Name>SuperSocket.Common.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperSocket\Facility\SuperSocket.Facility.Net45.csproj">
+      <Project>{01987bac-c498-44dd-b274-62ea2506b51d}</Project>
+      <Name>SuperSocket.Facility.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperSocket\SocketBase\SuperSocket.SocketBase.Net45.csproj">
+      <Project>{40b77789-ea11-4c05-8f52-86711d7bcaaf}</Project>
+      <Name>SuperSocket.SocketBase.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperSocket\SocketEngine\SuperSocket.SocketEngine.Net45.csproj">
+      <Project>{153fef72-191c-43d9-be71-2b351c7ac760}</Project>
+      <Name>SuperSocket.SocketEngine.Net45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GameMain\BackPack\" />
+    <Folder Include="GameMain\Config\" />
+    <Folder Include="GameMain\Data\" />
+    <Folder Include="GameMain\PlayerData\" />
+    <Folder Include="GameMain\Table\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

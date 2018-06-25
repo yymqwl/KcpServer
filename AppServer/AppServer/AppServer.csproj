@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D1299D08-71F0-4E79-ACD4-03742B908CAF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AppServer</RootNamespace>
+    <AssemblyName>AppServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Config\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\log4net.unix.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameFramework\GameFramework.csproj">
+      <Project>{e0f870e5-b978-40bf-bfd8-6aab6631bd26}</Project>
+      <Name>GameFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameMain\GameMain.csproj">
+      <Project>{0fc6bbb7-126d-435b-b321-30ad743b4e6d}</Project>
+      <Name>GameMain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameMsg\GameMsg.csproj">
+      <Project>{c6ff387f-1419-4635-bf7e-30a5b1400078}</Project>
+      <Name>GameMsg</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperSocket\Common\SuperSocket.Common.Net45.csproj">
+      <Project>{a24f4d38-ba9c-4fd6-95b7-4980de36131a}</Project>
+      <Name>SuperSocket.Common.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperSocket\Facility\SuperSocket.Facility.Net45.csproj">
+      <Project>{01987bac-c498-44dd-b274-62ea2506b51d}</Project>
+      <Name>SuperSocket.Facility.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperSocket\SocketBase\SuperSocket.SocketBase.Net45.csproj">
+      <Project>{40b77789-ea11-4c05-8f52-86711d7bcaaf}</Project>
+      <Name>SuperSocket.SocketBase.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperSocket\SocketEngine\SuperSocket.SocketEngine.Net45.csproj">
+      <Project>{153fef72-191c-43d9-be71-2b351c7ac760}</Project>
+      <Name>SuperSocket.SocketEngine.Net45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\gameconfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\serverconfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\Server\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0F870E5-B978-40BF-BFD8-6AAB6631BD26}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameFramework</RootNamespace>
+    <AssemblyName>GameFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>E:\vswork\TestDll\TestDll\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>E:\vswork\TestDll\TestDll\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameFramework\Base\EventBase.cs" />
+    <Compile Include="GameFramework\Base\EventMsgPool.cs" />
+    <Compile Include="GameFramework\Base\GameFrameworkAction.cs" />
+    <Compile Include="GameFramework\Base\GameFrameworkEventArgs.cs" />
+    <Compile Include="GameFramework\Base\GameFrameworkException.cs" />
+    <Compile Include="GameFramework\Base\GameFrameworkFunc.cs" />
+    <Compile Include="GameFramework\Base\GameFrameworkModule.cs" />
+    <Compile Include="GameFramework\Base\Node.cs" />
+    <Compile Include="GameFramework\Base\Trigger.cs" />
+    <Compile Include="GameFramework\Common\DebugHandler.cs" />
+    <Compile Include="GameFramework\Common\FactoryMethod.cs" />
+    <Compile Include="GameFramework\Common\GameConstant.cs" />
+    <Compile Include="GameFramework\Common\MathUtils.cs" />
+    <Compile Include="GameFramework\Common\Rnd.cs" />
+    <Compile Include="GameFramework\Common\Singleton.cs" />
+    <Compile Include="GameFramework\Common\TInstance.cs" />
+    <Compile Include="GameFramework\DataNode\DataNodeManager.cs" />
+    <Compile Include="GameFramework\DataNode\DataNodeManager.DataNode.cs" />
+    <Compile Include="GameFramework\DataNode\IDataNode.cs" />
+    <Compile Include="GameFramework\DataNode\IDataNodeManager.cs" />
+    <Compile Include="GameFramework\DataStructure\PriorityQueue.cs" />
+    <Compile Include="GameFramework\DataStructure\ResizableArray.cs" />
+    <Compile Include="GameFramework\DataStructure\RingBuffer.cs" />
+    <Compile Include="GameFramework\EventPool\BaseEventArgs.cs" />
+    <Compile Include="GameFramework\EventPool\EventPool.cs" />
+    <Compile Include="GameFramework\EventPool\EventPool.Event.cs" />
+    <Compile Include="GameFramework\EventPool\EventPoolMode.cs" />
+    <Compile Include="GameFramework\Event\EventManager.cs" />
+    <Compile Include="GameFramework\Event\GameEventArgs.cs" />
+    <Compile Include="GameFramework\Event\IEventManager.cs" />
+    <Compile Include="GameFramework\Extension\ArrayExtensions.cs" />
+    <Compile Include="GameFramework\Extension\CollectionExtensionMethods.cs" />
+    <Compile Include="GameFramework\Extension\ListExtensions.cs" />
+    <Compile Include="GameFramework\Fsm\Fsm.cs" />
+    <Compile Include="GameFramework\Fsm\FsmBase.cs" />
+    <Compile Include="GameFramework\Fsm\FsmEventHandler.cs" />
+    <Compile Include="GameFramework\Fsm\FsmManager.cs" />
+    <Compile Include="GameFramework\Fsm\FsmState.cs" />
+    <Compile Include="GameFramework\Fsm\IFsm.cs" />
+    <Compile Include="GameFramework\Fsm\IFsmManager.cs" />
+    <Compile Include="GameFramework\Logging\ILog.cs" />
+    <Compile Include="GameFramework\Logging\LogLevel.cs" />
+    <Compile Include="GameFramework\Logging\UnityLog.cs" />
+    <Compile Include="GameFramework\ObjectPool\IRecycleObject.cs" />
+    <Compile Include="GameFramework\ObjectPool\ObjectPoolStateInfo.cs" />
+    <Compile Include="GameFramework\ObjectPool\RecycleObject.cs" />
+    <Compile Include="GameFramework\ObjectPool\RecycleObjectFactory.cs" />
+    <Compile Include="GameFramework\ObjectPool\RecycleObjectPool.cs" />
+    <Compile Include="GameFramework\Procedure\IProcedureManager.cs" />
+    <Compile Include="GameFramework\Procedure\ProcedureBase.cs" />
+    <Compile Include="GameFramework\Procedure\ProcedureManager.cs" />
+    <Compile Include="GameFramework\ReferencePool\IReference.cs" />
+    <Compile Include="GameFramework\ReferencePool\ReferencePool.cs" />
+    <Compile Include="GameFramework\Setting\ISettingHelper.cs" />
+    <Compile Include="GameFramework\Setting\ISettingManager.cs" />
+    <Compile Include="GameFramework\Setting\SettingManager.cs" />
+    <Compile Include="GameFramework\Table\IDataTable.cs" />
+    <Compile Include="GameFramework\Table\IIDataTableRow.cs" />
+    <Compile Include="GameFramework\Table\TableManager.cs" />
+    <Compile Include="GameFramework\TaskPool\ITask.cs" />
+    <Compile Include="GameFramework\TaskPool\ITaskAgent.cs" />
+    <Compile Include="GameFramework\TaskPool\TaskPool.cs" />
+    <Compile Include="GameFramework\Thread\CThread.cs" />
+    <Compile Include="GameFramework\Thread\RunTimeWatch.cs" />
+    <Compile Include="GameFramework\Thread\UpdateTime.cs" />
+    <Compile Include="GameFramework\Thread\UpdateTimeWatch.cs" />
+    <Compile Include="GameFramework\Utility\Assembly.cs" />
+    <Compile Include="GameFramework\Utility\BufferUtils.cs" />
+    <Compile Include="GameFramework\Utility\ByteTool.cs" />
+    <Compile Include="GameFramework\Utility\Converter.cs" />
+    <Compile Include="GameFramework\Utility\Encryption.cs" />
+    <Compile Include="GameFramework\Utility\FileTool.cs" />
+    <Compile Include="GameFramework\Utility\JsonUtils.cs" />
+    <Compile Include="GameFramework\Utility\MD5Tool.cs" />
+    <Compile Include="GameFramework\Utility\Nullable.cs" />
+    <Compile Include="GameFramework\Utility\Path.cs" />
+    <Compile Include="GameFramework\Utility\ProtoBufUtils.cs" />
+    <Compile Include="GameFramework\Utility\Text.cs" />
+    <Compile Include="GameFramework\Utility\UnityAction.cs" />
+    <Compile Include="GameFramework\Utility\Verifier.Crc32.cs" />
+    <Compile Include="GameFramework\Utility\Verifier.cs" />
+    <Compile Include="GameFramework\Utility\XmlUtils.cs" />
+    <Compile Include="GameFramework\Utility\ZipHelper.cs" />
+    <Compile Include="GameFramework\Variable\GenericVariable.cs" />
+    <Compile Include="GameFramework\Variable\Variable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

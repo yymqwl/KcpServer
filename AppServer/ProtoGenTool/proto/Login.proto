@@ -1,0 +1,8 @@
+package Game_Msg;  
+
+
+message Req_Ping
+{
+	required int32 id = 1;
+	required string des=2;
+}

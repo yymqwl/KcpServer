@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ConfigServerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Ip>192.168.0.245</Ip>
+  <MaxConnectionNumber>100000</MaxConnectionNumber>
+  <Port>1990</Port>
+  <DB_Connection_String>server=127.0.0.1;database=wgzz_db;uid=root;pwd=19910106;port=3306;Charset=utf8</DB_Connection_String>
+  <HproseTcp>tcp4://192.168.0.245:1995/</HproseTcp>
+</ConfigServerData>
